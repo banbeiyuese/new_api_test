@@ -6,14 +6,12 @@ project_name = "api_test"
 
 
 def get_root_path():
-    '''
+    """
     获取根路径
-    :param project_name: 项目名
-    :return:
-    '''
-    curPath = os.path.abspath(os.path.dirname(__file__))
-    rootPath = curPath[:curPath.find(project_name + "\\") + len(project_name + "\\")]  # 获取myProject，也就是项目的根路径
-    return rootPath
+    """
+    cur_path = os.path.abspath(os.path.dirname(__file__))
+    root_path = cur_path[:cur_path.find(project_name + "\\") + len(project_name + "\\")]  # 获取myProject，也就是项目的根路径
+    return root_path
 
 
 if __name__ == '__main__':
