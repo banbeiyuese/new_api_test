@@ -1,16 +1,14 @@
 # encoding: utf-8
-'''
-@author: lingshu
-@file: read_excel.py
-@time: 2019/6/21 17:03
-@desc: 读取excel
-'''
+
+
 import xlrd
 from utils import get_file_path
+
+
 def read_excel():
-    file_path = get_file_path.get_root_path()+'testdata\\testdata.xlsx'
+    file_path = get_file_path.get_root_path() + 'testdata\\testdata.xlsx'
     # 文件位置
-    excel_file=xlrd.open_workbook(file_path)
+    excel_file = xlrd.open_workbook(file_path)
 
     # 获取sheet内容【1.根据sheet索引2.根据sheet名称】
     # sheet=ExcelFile.sheet_by_index(1)
@@ -26,11 +24,12 @@ def read_excel():
     print(rows)
     print(cols)
 
-    #获取单元格内容
-    print("第二行第一列的值为： %s",sheet.cell(1,0))
+    # 获取单元格内容
+    print("第二行第一列的值为： %s", sheet.cell(1, 0))
 
     # 打印单元格内容格式
-    print("单元格内容格式为： %s",sheet.cell(0,0).ctype)
+    print("单元格内容格式为： %s", sheet.cell(0, 0).ctype)
+
 
 def get_xls():
     cls = []
@@ -42,5 +41,9 @@ def get_xls():
     for i in range(nrows):
         cls.append(sheet.row_values(i))
     return cls
+
+
 if __name__ == '__main__':
-    print(get_xls())
+    test_file = get_file_path.get_root_path() + 'testdata\\testdata.xlsx'
+    print(test_file)
+    # print(get_xls())
